@@ -18,7 +18,7 @@ class BaniDB {
     };
   }
 
-  static Future<Map<String, dynamic>> search(String query,
+  static Future<Map<String, dynamic>?> search(String query,
       {int searchType = 1,
       String source = 'all',
       bool larivaar = false,
@@ -91,7 +91,7 @@ class BaniDB {
       searchResults['pages_data'] = pages;
       return searchResults;
     } else {
-      throw Exception('Query length should be >= 3!');
+      return null;
     }
   }
 }
